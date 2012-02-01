@@ -48,16 +48,37 @@
 					</blockquote>
 				</div>
 				<nav class="menu">
-	    			<div class="btn facebook social-btn">
-	    				<a href="/auth/facebook">
-	    					<span class="font-social-logos">C</span> Login with Facebook
-	    				</a>
-	    			</div>
-	    			<div class="btn twitter social-btn">
-	    				<a href="/auth/twitter">
-	    					<span class="font-social-logos">M</span> Login with Twitter
-	    				</a>
-	    			</div>
+	    			
+	    			
+	    			{% if current_user %}
+						<div class="btn lightbtn" lightbox_id="submit_code_lightbox">
+							<i class="pencil"></i> Submit your code
+						</div>
+						{% if space.user.provider == 'twitter' %}
+							<div class="btn twitter social-btn">
+			    				<a href="/signout">
+			    					<span class="font-social-logos"><</span> Signout
+			    				</a>
+			    			</div>
+						{% else %}
+							<div class="btn facebook social-btn">
+								<a href="/signout">
+			    					<span class="font-social-logos">C</span> Signout
+			    				</a>
+			    			</div>
+		    			{% endif %}
+					{% else %}
+						<div class="btn facebook social-btn">
+		    				<a href="/auth/facebook">
+		    					<span class="font-social-logos">C</span> Login with Facebook
+		    				</a>
+		    			</div>
+		    			<div class="btn twitter social-btn">
+		    				<a href="/auth/twitter">
+		    					<span class="font-social-logos">M</span> Login with Twitter
+		    				</a>
+		    			</div>
+					{% endif %}
 				</nav>
 			</div>
 		</header>
