@@ -1,0 +1,82 @@
+/* Reset */
+
+iframe {
+	border: 0;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* Page */
+
+body {
+	background-image: url('_images/background-dark.jpg');
+}
+
+/* Type Regular */
+h1 {
+	font-size: 80px;
+	line-height: 80px;
+	font-weight: normal;
+}
+
+h3 *, h3 *:hover{
+	text-decoration: none;
+	color: #333;
+	text-shadow: 0px 1px 0px #fff;
+}
+
+.font-chunk-five {
+	font-family: 'ChunkFiveRegular', sans-serif;
+}
+
+.font-social-logos {
+	font-family: 'SocialLogosRegular', sans-serif;
+}
+
+/* Layout */
+
+/* UI Elements */
+
+.social-btn{
+	padding-left: 30px;
+	position: relative;
+}
+
+.social-btn a {
+	color: #333;
+	text-decoration: none;
+}
+
+.social-btn .font-social-logos {
+	font-size: 30px;
+	position: absolute;
+	line-height: 28px;
+	top:0;
+	left: 0;
+	padding-left: 2px;
+}
+
+.social-btn.twitter {
+	padding-left: 35px;
+}
+
+.social-btn.facebook:hover a{
+	color: #3b5998;
+	
+}
+
+.social-btn.twitter:hover a{
+	color: #0099d5;
+}
+
+.hr.light-to-dark {
+	background-image: url('_images/background-divider.jpg');
+	height: 8px; 
+}
+
+.hr.dark-to-light {
+	background-image: url('_images/background-divider-reverse.jpg');
+	height: 8px; 
+}

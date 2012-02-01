@@ -1,0 +1,28 @@
+.main-header {
+	background-image: url('_images/background-light.jpg');
+	padding: 20px 0 25px 0;
+}
+
+.main-header .title {
+	float: left;
+	width: 624px;
+	text-shadow: 0px 1px 0px #fff;
+}
+
+
+.main-header .menu{
+	float: right;
+	height: 80px;
+	line-height: 80px;
+	margin: auto;
+}
+
+.main-header .container {
+	position: relative;
+}
+
+.main-header .example-twitter{
+	position: absolute;
+	bottom: -55px;
+	left: 0;
+}
