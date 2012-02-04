@@ -20,4 +20,20 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+	// Title update
+	$('.lightbox .card #form_details #idea_title').keyup(function(){
+		if($(this).val() != ""){
+			$('.lightbox .card #form_details #title-preview').html($(this).val());
+		}else{
+			$('.lightbox .card #form_details #title-preview').html('Title');
+		}
+	});
+	
+	// URL Update
+	$('.lightbox .card #form_details #idea_url').keyup(function(){
+	
+		$('.lightbox .card #form_details #url-preview').attr('href', $(this).val());
+		
+	});
 });
