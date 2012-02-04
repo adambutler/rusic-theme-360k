@@ -7,4 +7,4 @@
 [ ] Fix z-index bug on list page cards
 [ ] Sort out footer
 [ ] Look into like detection
-[ ] Larger Editor
+[x] Larger Editor
