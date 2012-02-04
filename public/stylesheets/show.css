@@ -1,0 +1,101 @@
+.show-body .show-list {
+	width: 810px;
+	margin: auto;
+}
+
+.show-body .show-list li {
+	margin: 20px 0;
+	padding: 45px 0 80px 0;
+	background: url('_images/icon_star.png') no-repeat bottom center;
+}
+
+.show-body .viewport {
+	width: 810px;
+	height: 460px;
+	z-index: 99 !important;
+}
+
+.show-body .card {
+	background-color: #fff;
+	width: 800px;
+	height: 450px;
+	border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 3D Stuff Here */
+
+.show-body .card {
+	-webkit-perspective-origin: 50% 50%;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: 2s;
+	-webkit-backface-visibility: hidden;
+}
+
+.show-body .viewport {
+	-webkit-perspective: 2000;	
+}
+
+.show-body .card.card-front {
+	-webkit-transform: rotateY(0deg);
+}
+
+.show-body .card.card-front-reverse {
+	-webkit-transform: rotateY(-180deg);
+}
+
+.show-body .card.card-back {
+	-webkit-transform: rotateY(-180deg);
+}
+
+.show-body .card.card-back-reverse {
+	-webkit-transform: rotateY(-360deg);
+}
+
+.show-body .card .CodeMirror-scroll{
+	height: 450px;
+}
+
+.show-body .info {
+	width: 750px;
+	margin-left: 25px;
+	margin-top: 10px;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #dddddd 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* IE10+ */
+	background: linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    padding: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.show-body .info .avitar{
+	float: left;
+	margin-right: 5px;
+	border-radius: 2px;
+	padding: 1px;
+	border: 1px solid #ccc;
+}
+
+.show-body .info h3{
+	padding-top: 2px;
+}
+
+.show-body .info .buttons{
+	float: right;
+	margin-right: 5px;
+	position: absolute;
+	top: 50%;
+	margin-top: -14px;
+	right: 0;
+}

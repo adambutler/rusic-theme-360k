@@ -1,1 +1,33 @@
-<h1>Test - Show</h1>
+<!-- {% assign assets_url="http://www.littlebigmedia.com/private/rusic/public" %} -->
+{% assign assets_url="http://127.0.0.1:8081/public" %}
+
+<script src="{{assets_url}}/javascripts/show.js"></script>
+
+<ul class="unstyled show-list">
+	<li class="show-list-item">
+		<div class="viewport card3d">
+			<div class="card card-front">
+				<iframe width="800px" height="450px" scrolling="no"></iframe>
+			</div>
+			
+			<div class="card card-back">
+				<textarea class="codemirror" id="test">{{idea.custom1}}</textarea>
+			</div>
+		</div>
+		<div class="info">
+			<img src="{{idea.user.image_url}}" width="48px" height="48px" class="avitar">
+			<h3>
+				{{idea.title}}
+				<!-- <i class="icon edit"></i> -->
+			</h3>
+			<a href="{{idea.custom2}}" target="_blank"><h6>{{idea.user.nickname}}</h6></a>
+			<div class="buttons">
+				<div class="btn forkbtn"><i class="volume-off"></i>Fork</div>
+				<div class="btn card3dbtn"><i class="eject"></i>View Source</div>
+				<div class="btn likebtn" the_link="{{idea.like_link}}"><i class="star-empty"></i> Like <font class="likecount" size="1px;">({{idea.likes}})</font></div>
+				<div class="btn"><i class="user"></i> Comment <font size="1px;">({{idea.comments_count}})</font></div>
+				<!-- <div class="btn"><i class="edit"></i> Edit</div> -->
+			</div>
+		</div>
+	</li>
+</ul>
