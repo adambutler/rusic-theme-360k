@@ -1,4 +1,6 @@
-{% assign assets_url="http://www.littlebigmedia.com/private/rusic/public" %}
+<!-- {% assign assets_url="http://www.littlebigmedia.com/private/rusic/public" %} -->
+{% assign assets_url="http://127.0.0.1:8081/public" %}
+{% assign current_user=true %}
 
 <!DOCTYPE html>
 <html>
@@ -24,17 +26,22 @@
 		<!-- #              # -->
 		<!-- ################ -->
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="{{assets_url}}/javascripts/codemirror.js"></script>
+		<script src="{{assets_url}}/javascripts/main.js"></script>
+		<script src="{{assets_url}}/javascripts/jquery.lightbox_me.js"></script>
+		<script src="{{assets_url}}/javascripts/new.js"></script>
 		
+		<!-- ################ -->
+		<!-- #              # -->
+		<!-- #  Codemirror  # -->
+		<!-- #              # -->
+		<!-- ################ -->
 		<script src="{{assets_url}}/lib/codemirror/lib/codemirror.js" type="text/javascript"></script>
 		<script src="{{assets_url}}/lib/codemirror/mode/xml/xml.js" type="text/javascript"></script>
 		<script src="{{assets_url}}/lib/codemirror/mode/javascript/javascript.js" type="text/javascript"></script>
 		<script src="{{assets_url}}/lib/codemirror/mode/css/css.js" type="text/javascript"></script>
 		<script src="{{assets_url}}/lib/codemirror/mode/htmlmixed/htmlmixed.js" type="text/javascript"></script>
 		<link href="{{assets_url}}/lib/codemirror/lib/codemirror.css" rel="stylesheet">
-		
-		<script src="{{assets_url}}/javascripts/codemirror.js"></script>
-		
-		<script src="{{assets_url}}/javascripts/main.js"></script>
 	</head>
 	<body>
 		<header class="main-header">
@@ -51,13 +58,13 @@
 	    			
 	    			
 	    			{% if current_user %}
-						<div class="btn lightbtn" lightbox_id="submit_code_lightbox">
+						<div class="btn lightboxbtn" lightbox_id="new_post">
 							<i class="pencil"></i> Submit your code
 						</div>
 						{% if space.user.provider == 'twitter' %}
 							<div class="btn twitter social-btn">
 			    				<a href="/signout">
-			    					<span class="font-social-logos"><</span> Signout
+			    					<span class="font-social-logos">M</span> Signout
 			    				</a>
 			    			</div>
 						{% else %}
@@ -90,5 +97,186 @@
 		<footer>
 		
 		</footer>
+		<!-- ############## -->
+		<!-- #            # -->
+		<!-- #  Lightbox  # -->
+		<!-- #            # -->
+		<!-- ############## -->
+		
+		<style type="text/css">
+			.lightbox {
+				display: none;
+			}
+			
+			.lightbox .viewport {
+				width: 1114px;
+				height: 507px;
+				z-index: 99 !important;
+			}
+			
+			.lightbox .card {
+				width: 1114px;
+				height: 507px;
+				background-color: #fff;
+				border: 1px solid #ddd;
+			    border-radius: 2px;
+			    padding: 4px;
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			}
+			
+			.lightbox iframe{
+				float: left;
+				background-color: #fff;
+				border: 1px solid #ddd;
+			    border-radius: 2px;
+			    padding: 4px;
+			}
+			
+			/* 3D Stuff Here */
+			
+			.lightbox .card {
+				-webkit-perspective-origin: 50% 50%;
+				-webkit-transform-style: preserve-3d;
+				-webkit-transition: 2s;
+				-webkit-backface-visibility: hidden;
+			}
+			
+			.lightbox .viewport {
+				-webkit-perspective: 2000;	
+			}
+			
+			.lightbox .card.card-front {
+				-webkit-transform: rotateY(0deg);
+			}
+			
+			.lightbox .card.card-front-reverse {
+				-webkit-transform: rotateY(-180deg);
+			}
+			
+			.lightbox .card.card-back {
+				-webkit-transform: rotateY(-180deg);
+			}
+			
+			.lightbox .card.card-back-reverse {
+				-webkit-transform: rotateY(-360deg);
+			}
+			
+			.lightbox .card .CodeMirror-scroll, .lightbox .card #form_details{
+				height: 450px;
+				width: 290px;
+				margin-right: 4px;
+				float: left;
+				background-color: #fff;
+				border: 1px solid #ddd;
+			    border-radius: 2px;
+			    padding: 4px;
+			}
+			
+			.lightbox #code-help-block {
+				width: 304px;
+			}
+			
+			.lightbox #code-help-block, .lightbox #preview-help-block {
+				float: left;
+			}
+			
+			.lightbox .buttons{
+				padding-top: 12px;
+				float: left;
+			}
+			
+			.lightbox .buttons.floatright{
+				float: right;
+			}
+			
+			
+			.lightbox .card #form_details {
+				background: #ffffff; /* Old browsers */
+				background: -moz-linear-gradient(top,  #ffffff 0%, #dddddd 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* IE10+ */
+				background: linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+			}
+			
+			.lightbox .card #form_details .avitar{
+				float: left;
+				margin-right: 5px;
+				border-radius: 2px;
+				padding: 1px;
+				border: 1px solid #ccc;
+			}
+			
+			.lightbox .card #form_details  #description {
+				width: 280px;
+				resize: none;
+				height: 205px;
+			}
+			
+			.lightbox .card #form_details #post-social {
+				float:left;
+				margin-right:5px;
+			}
+			
+			.lightbox .card #form_details input, .lightbox .card #form_details textarea {
+				margin-bottom: 10px;
+			}
+		</style>
+		
+		<div class="lightbox" id="new_post">
+			<form action="/ideas" method="post">
+				<div class="viewport card3d">
+					<div class="card card-front">
+						<textarea id="mainCodemirror">{{idea.custom1}}</textarea>
+						<iframe width="800px" height="450px" scrolling="no" id="mainPreview"></iframe>
+						<div id="code-help-block">
+							<h3>Code</h3>
+							<h6>Ctrl+F - toggle editor size</h6>
+						</div>
+						<div id="preview-help-block">
+							<h3>Preview</h3>
+							<h6>360kb Remaining</h6>
+						</div>
+						<div class="buttons floatright">
+							<div class="btn danger btn-close">Cancel <i class="remove"></i></div>
+							<div class="btn success card3dbtn">Next <i class="chevron-right"></i></div>
+						</div>
+					</div>
+					
+					<div class="card card-back">
+						<div id="form_details">
+							<img src="{{user.image_url}}" width="48px" height="48px" class="avitar">
+							<h3 id="title-preview">Title</h3>
+							<a href="{{user.profile_url}}" target="_blank"><h6>By {{user.nickname}}</h6></a>
+							<br/>
+							<h6>Title -</h6>
+							<input type="text" name="idea[title]" class="title" id="idea_title" placeholder="Title">
+							<h6>Your Website -</h6>
+							<input type="text" name="idea[custom2]" class="title" id="idea_url" placeholder="http://yoursite.com">
+							<h6>Description -</h6>
+							<textarea name="idea[content]" id="description" rows="6"></textarea>
+							<input type="checkbox" name="idea[should_post_to_social]" value="1" checked="checked" id="post-social">
+							<label><h6>Post to {{user.provider}}</h6></label>
+						</div>
+						<iframe width="800px" height="450px" scrolling="no" id="mainSecondPreview"></iframe>
+						<div class="buttons">
+							<div class="btn card3dbtn"><i class="chevron-left"></i> Back</div>
+						</div>
+						<div class="buttons floatright">
+							<div class="btn danger btn-close">Cancel <i class="remove"></i></div>
+							<input class="btn success" type="submit" value="Submit">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<script type="text/javascript">
+			
+		</script>
 	</body>
 </html>
