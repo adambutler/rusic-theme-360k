@@ -19,12 +19,12 @@
 					<a href="{{idea.permalink}}">{{idea.title}}</a>
 					<!-- <i class="icon edit"></i> -->
 				</h3>
-				<h6>{{idea.user.nickname}}</h6>
+				<a href="{{idea.custom1}}" target="_blank"><h6>{{idea.user.nickname}}</h6></a>
 				<div class="buttons">
 					<div class="btn"><i class="volume-off"></i>Fork</div>
 					<div class="btn card3dbtn"><i class="eject"></i>View Source</div>
-					<div class="btn likebtn" the_link="/360k/ideas/1625/likes"><i class="star-empty"></i> Like <font class="likecount" size="1px;">(2)</font></div>
-					<div class="btn"><i class="user"></i> Comment <font size="1px;">(0)</font></div>
+					<div class="btn likebtn" the_link="{{idea.like_link}}"><i class="star-empty"></i> Like <font class="likecount" size="1px;">({{idea.likes}})</font></div>
+					<div class="btn"><i class="user"></i> Comment <font size="1px;">({{idea.comments_count}})</font></div>
 					<!-- <div class="btn"><i class="edit"></i> Edit</div> -->
 				</div>
 			</div>
