@@ -1,0 +1,33 @@
+footer {
+    background-image: url('_images/background-light.jpg');
+    padding: 20px 0 35px 0;
+}
+
+footer .bubblearrow:after {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent transparent #EEEEEE;
+    border-style: solid;
+    border-width: 15px;
+    content: "";
+    display: block;
+    left: 47px;
+    position: absolute;
+    top: -30px;
+    width: 0;
+}
+
+footer .bubble {
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 36px;
+    padding: 5px;
+    width: auto;
+   	margin-top: 50px;
+}

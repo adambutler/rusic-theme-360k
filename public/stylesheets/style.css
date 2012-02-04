@@ -35,6 +35,14 @@ h3 *, h3 *:hover{
 	font-family: 'SocialLogosRegular', sans-serif;
 }
 
+.center {
+	text-align: center;
+}
+
+span.heart {
+	color: #993426;
+}
+
 /* Layout */
 
 /* UI Elements */
