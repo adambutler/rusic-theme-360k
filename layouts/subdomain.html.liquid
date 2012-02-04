@@ -231,7 +231,7 @@
 			<form action="/ideas" method="post">
 				<div class="viewport card3d">
 					<div class="card card-front">
-						<textarea id="mainCodemirror">{{idea.custom1}}</textarea>
+						<textarea id="mainCodemirror" name="idea[custom1]">{{idea.custom1}}</textarea>
 						<iframe width="800px" height="450px" scrolling="no" id="mainPreview"></iframe>
 						<div id="code-help-block">
 							<h3>Code</h3>
@@ -249,9 +249,9 @@
 					
 					<div class="card card-back">
 						<div id="form_details">
-							<img src="{{user.image_url}}" width="48px" height="48px" class="avitar">
+							<img src="{{space.user.image_url}}" width="48px" height="48px" class="avitar">
 							<h3 id="title-preview">Title</h3>
-							<a href="{{user.profile_url}}" target="_blank"><h6>By {{user.nickname}}</h6></a>
+							<a href="{{space.user.profile_url}}" target="_blank"><h6>By {{space.user.nickname}}</h6></a>
 							<br/>
 							<h6>Title -</h6>
 							<input type="text" name="idea[title]" class="title" id="idea_title" placeholder="Title">
@@ -260,7 +260,7 @@
 							<h6>Description -</h6>
 							<textarea name="idea[content]" id="description" rows="6"></textarea>
 							<input type="checkbox" name="idea[should_post_to_social]" value="1" checked="checked" id="post-social">
-							<label><h6>Post to {{user.provider}}</h6></label>
+							<label><h6>Post to {{space.user.provider}}</h6></label>
 						</div>
 						<iframe width="800px" height="450px" scrolling="no" id="mainSecondPreview"></iframe>
 						<div class="buttons">
