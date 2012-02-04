@@ -1,0 +1,126 @@
+.lightbox {
+	display: none;
+}
+
+.lightbox .viewport {
+	width: 1114px;
+	height: 507px;
+	z-index: 99 !important;
+}
+
+.lightbox .card {
+	width: 1114px;
+	height: 507px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.lightbox iframe{
+	float: left;
+	background-color: #fff;
+	border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 4px;
+}
+
+/* 3D Stuff Here */
+
+.lightbox .card {
+	-webkit-perspective-origin: 50% 50%;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: 2s;
+	-webkit-backface-visibility: hidden;
+}
+
+.lightbox .viewport {
+	-webkit-perspective: 2000;	
+}
+
+.lightbox .card.card-front {
+	-webkit-transform: rotateY(0deg);
+}
+
+.lightbox .card.card-front-reverse {
+	-webkit-transform: rotateY(-180deg);
+}
+
+.lightbox .card.card-back {
+	-webkit-transform: rotateY(-180deg);
+}
+
+.lightbox .card.card-back-reverse {
+	-webkit-transform: rotateY(-360deg);
+}
+
+.lightbox .card .CodeMirror-scroll, .lightbox .card #form_details{
+	height: 450px;
+	width: 290px;
+	margin-right: 4px;
+	float: left;
+	background-color: #fff;
+	border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 4px;
+}
+
+.lightbox #code-help-block {
+	width: 304px;
+}
+
+.lightbox #code-help-block, .lightbox #preview-help-block {
+	float: left;
+}
+
+.lightbox .buttons{
+	padding-top: 12px;
+	float: left;
+}
+
+.lightbox .buttons.floatright{
+	float: right;
+}
+
+
+.lightbox .card #form_details {
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #dddddd 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* IE10+ */
+	background: linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+}
+
+.lightbox .card #form_details .avitar{
+	float: left;
+	margin-right: 5px;
+	border-radius: 2px;
+	padding: 1px;
+	border: 1px solid #ccc;
+}
+
+.lightbox .card #form_details  #description {
+	width: 280px;
+	resize: none;
+	height: 205px;
+}
+
+.lightbox .card #form_details #post-social {
+	float:left;
+	margin-right:5px;
+}
+
+.lightbox .card #form_details input, .lightbox .card #form_details textarea {
+	margin-bottom: 10px;
+}
+
+.lightbox .CodeMirror-scroll.fullscreen {
+	z-index: 3;
+	width: 1104px;
+}

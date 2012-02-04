@@ -19,6 +19,7 @@
 		<link href="{{assets_url}}/stylesheets/header.css" rel="stylesheet">
 		<link href="{{assets_url}}/stylesheets/index.css" rel="stylesheet">
 		<link href="{{assets_url}}/stylesheets/style.css" rel="stylesheet">
+		<link href="{{assets_url}}/stylesheets/lightbox.css" rel="stylesheet">
 		
 		<!-- ################ -->
 		<!-- #              # -->
@@ -104,134 +105,58 @@
 		<!-- ############## -->
 		
 		<style type="text/css">
-			.lightbox {
-				display: none;
-			}
 			
-			.lightbox .viewport {
-				width: 1114px;
-				height: 507px;
-				z-index: 99 !important;
-			}
-			
-			.lightbox .card {
-				width: 1114px;
-				height: 507px;
-				background-color: #fff;
-				border: 1px solid #ddd;
-			    border-radius: 2px;
-			    padding: 4px;
-			    position: absolute;
-			    top: 0;
-			    left: 0;
-			}
-			
-			.lightbox iframe{
-				float: left;
-				background-color: #fff;
-				border: 1px solid #ddd;
-			    border-radius: 2px;
-			    padding: 4px;
-			}
-			
-			/* 3D Stuff Here */
-			
-			.lightbox .card {
-				-webkit-perspective-origin: 50% 50%;
-				-webkit-transform-style: preserve-3d;
-				-webkit-transition: 2s;
-				-webkit-backface-visibility: hidden;
-			}
-			
-			.lightbox .viewport {
-				-webkit-perspective: 2000;	
-			}
-			
-			.lightbox .card.card-front {
-				-webkit-transform: rotateY(0deg);
-			}
-			
-			.lightbox .card.card-front-reverse {
-				-webkit-transform: rotateY(-180deg);
-			}
-			
-			.lightbox .card.card-back {
-				-webkit-transform: rotateY(-180deg);
-			}
-			
-			.lightbox .card.card-back-reverse {
-				-webkit-transform: rotateY(-360deg);
-			}
-			
-			.lightbox .card .CodeMirror-scroll, .lightbox .card #form_details{
-				height: 450px;
-				width: 290px;
-				margin-right: 4px;
-				float: left;
-				background-color: #fff;
-				border: 1px solid #ddd;
-			    border-radius: 2px;
-			    padding: 4px;
-			}
-			
-			.lightbox #code-help-block {
-				width: 304px;
-			}
-			
-			.lightbox #code-help-block, .lightbox #preview-help-block {
-				float: left;
-			}
-			
-			.lightbox .buttons{
-				padding-top: 12px;
-				float: left;
-			}
-			
-			.lightbox .buttons.floatright{
-				float: right;
-			}
-			
-			
-			.lightbox .card #form_details {
-				background: #ffffff; /* Old browsers */
-				background: -moz-linear-gradient(top,  #ffffff 0%, #dddddd 100%); /* FF3.6+ */
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
-				background: -webkit-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
-				background: -o-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* Opera 11.10+ */
-				background: -ms-linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* IE10+ */
-				background: linear-gradient(top,  #ffffff 0%,#dddddd 100%); /* W3C */
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
-			}
-			
-			.lightbox .card #form_details .avitar{
-				float: left;
-				margin-right: 5px;
-				border-radius: 2px;
-				padding: 1px;
-				border: 1px solid #ccc;
-			}
-			
-			.lightbox .card #form_details  #description {
-				width: 280px;
-				resize: none;
-				height: 205px;
-			}
-			
-			.lightbox .card #form_details #post-social {
-				float:left;
-				margin-right:5px;
-			}
-			
-			.lightbox .card #form_details input, .lightbox .card #form_details textarea {
-				margin-bottom: 10px;
-			}
 		</style>
 		
 		<div class="lightbox" id="new_post">
 			<form action="/ideas" method="post">
 				<div class="viewport card3d">
 					<div class="card card-front">
-						<textarea id="mainCodemirror" name="idea[custom1]">{{idea.custom1}}</textarea>
+<textarea id="mainCodemirror" name="idea[custom1]">
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      
+      div {
+        background-color: #98bd42;
+        width: 800px;
+        height: 450px;
+        text-align: center;
+        line-height: 280px;
+        overflow: hidden;
+      }
+      
+      h1 {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 120px;
+        color: #ddd;
+          text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Hi There</h1>
+    </div>
+  </body>
+</html>
+</textarea>
 						<iframe width="800px" height="450px" scrolling="no" id="mainPreview"></iframe>
 						<div id="code-help-block">
 							<h3>Code</h3>
@@ -262,7 +187,7 @@
 							<input type="checkbox" name="idea[should_post_to_social]" value="1" checked="checked" id="post-social">
 							<label><h6>Post to {{space.user.provider}}</h6></label>
 						</div>
-						<iframe width="800px" height="450px" scrolling="no" id="mainSecondPreview"></iframe>
+						<iframe width="800px" height="450px" scrolling="no" id="mainSecondaryPreview"></iframe>
 						<div class="buttons">
 							<div class="btn card3dbtn"><i class="chevron-left"></i> Back</div>
 						</div>
@@ -274,11 +199,5 @@
 				</div>
 			</form>
 		</div>
-		
-		<script type="text/javascript">
-			
-			
-			
-		</script>
 	</body>
 </html>

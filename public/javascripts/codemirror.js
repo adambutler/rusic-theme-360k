@@ -39,13 +39,36 @@ $(document).ready(function() {
 		onChange: function() {
 			clearTimeout(mainDelay);
 			mainDelay = setTimeout(updateMainPreview, 300);
-		}
+		},
+		extraKeys: {"Cmd-F": toggleFullscreenEditing, "Ctrl-F": toggleFullscreenEditing}
 	});
-		
+	
+	function toggleFullscreenEditing(){
+		var editorDiv = $('.lightbox .CodeMirror-scroll');
+        if (!editorDiv.hasClass('fullscreen')) {
+            $('#mainPreview').css('display', 'none');
+			$('#preview-help-block').css('display', 'none');
+           
+            editorDiv.addClass('fullscreen');
+            mainEditor.refresh();
+        }else {
+        	$('#mainPreview').css('display', 'block');
+			$('#preview-help-block').css('display', 'block');
+			
+            editorDiv.removeClass('fullscreen');
+            mainEditor.refresh();
+        }
+	}
+	
 	function updateMainPreview() {
-		console.log('test')
 		var previewFrame = document.getElementById('mainPreview');
 		var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
+		preview.open();
+		preview.write(mainEditor.getValue());
+		preview.close();
+		
+		previewFrame = document.getElementById('mainSecondaryPreview');
+		preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
 		preview.open();
 		preview.write(mainEditor.getValue());
 		preview.close();
@@ -57,6 +80,7 @@ $(document).ready(function() {
 		$('#'+$(this).attr('lightbox_id')).lightbox_me({
 			centered: true,
 			onLoad: function(){
+				updateMainPreview();
 				mainEditor.refresh();
 			},
 			closeClick: false,
