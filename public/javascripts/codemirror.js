@@ -43,6 +43,8 @@ $(document).ready(function() {
 		extraKeys: {"Cmd-F": toggleFullscreenEditing, "Ctrl-F": toggleFullscreenEditing}
 	});
 	
+	$('html').data('mainEditor', mainEditor);
+	
 	function toggleFullscreenEditing(){
 		var editorDiv = $('.lightbox .CodeMirror-scroll');
         if (!editorDiv.hasClass('fullscreen')) {

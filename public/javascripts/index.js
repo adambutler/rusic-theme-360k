@@ -44,4 +44,12 @@ $(document).ready(function() {
 			}
 		}, 'json');
 	});
+	
+	$('.main-body .main-list .forkbtn').click(function(){
+		
+		var cardViewport = $(this).closest('.main-list-item').find('.viewport');
+		$('#mainLightboxBtn').click();
+		$('html').data('mainEditor').setValue($(cardViewport).data('editor').getValue());
+	
+	});
 });
