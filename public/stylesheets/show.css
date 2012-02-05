@@ -1,21 +1,21 @@
-.show-body .show-list {
+.main-body .show-list {
 	width: 810px;
 	margin: auto;
 }
 
-.show-body .show-list li {
+.main-body .show-list li {
 	margin: 20px 0;
 	padding: 45px 0 80px 0;
 	background: url('_images/icon_star.png') no-repeat bottom center;
 }
 
-.show-body .viewport {
+.main-body .viewport {
 	width: 810px;
 	height: 460px;
 	z-index: 99 !important;
 }
 
-.show-body .card {
+.main-body .card {
 	background-color: #fff;
 	width: 800px;
 	height: 450px;
@@ -29,38 +29,38 @@
 
 /* 3D Stuff Here */
 
-.show-body .card {
+.main-body .card {
 	-webkit-perspective-origin: 50% 50%;
 	-webkit-transform-style: preserve-3d;
 	-webkit-transition: 2s;
 	-webkit-backface-visibility: hidden;
 }
 
-.show-body .viewport {
+.main-body .viewport {
 	-webkit-perspective: 2000;	
 }
 
-.show-body .card.card-front {
+.main-body .card.card-front {
 	-webkit-transform: rotateY(0deg);
 }
 
-.show-body .card.card-front-reverse {
+.main-body .card.card-front-reverse {
 	-webkit-transform: rotateY(-180deg);
 }
 
-.show-body .card.card-back {
+.main-body .card.card-back {
 	-webkit-transform: rotateY(-180deg);
 }
 
-.show-body .card.card-back-reverse {
+.main-body .card.card-back-reverse {
 	-webkit-transform: rotateY(-360deg);
 }
 
-.show-body .card .CodeMirror-scroll{
+.main-body .card .CodeMirror-scroll{
 	height: 450px;
 }
 
-.show-body .info {
+.main-body .info {
 	width: 750px;
 	margin-left: 25px;
 	margin-top: 10px;
@@ -79,7 +79,7 @@
     position: relative;
 }
 
-.show-body .info .avitar{
+.main-body .info .avitar{
 	float: left;
 	margin-right: 5px;
 	border-radius: 2px;
@@ -87,11 +87,11 @@
 	border: 1px solid #ccc;
 }
 
-.show-body .info h3{
+.main-body .info h3{
 	padding-top: 2px;
 }
 
-.show-body .info .buttons{
+.main-body .info .buttons{
 	float: right;
 	margin-right: 5px;
 	position: absolute;

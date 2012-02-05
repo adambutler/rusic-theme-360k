@@ -1,9 +1,9 @@
 $(document).ready(function() {
-	$('.show-body .main-list .card3dbtn').click(function(){
+	$('.main-body .show-list .card3dbtn').click(function(){
 				
 		var button = this;
 		
-		var cardViewport = $(this).closest('.main-list-item').find('.viewport');
+		var cardViewport = $(this).closest('.show-list-item').find('.viewport');
 						
 		$(cardViewport).find('.card').each(function(){
 			
@@ -28,7 +28,7 @@ $(document).ready(function() {
 		});
 	});
 	
-	$('.show-body .main-list .likebtn').click(function(){
+	$('.main-body .show-list .likebtn').click(function(){
 				
 		var button = this;
 		
@@ -45,11 +45,15 @@ $(document).ready(function() {
 		}, 'json');
 	});
 	
-	$('.show-body .main-list .forkbtn').click(function(){
+	$('.main-body .show-list .forkbtn').click(function(){
 		
-		var cardViewport = $(this).closest('.main-list-item').find('.viewport');
+		var cardViewport = $(this).closest('.show-list-item').find('.viewport');
 		$('#mainLightboxBtn').click();
 		$('html').data('mainEditor').setValue($(cardViewport).data('editor').getValue());
 	
+	});
+	
+	$('.comments .comment-list li textarea').autoResize({
+		extraSpace: 0
 	});
 });

@@ -1,0 +1,103 @@
+.comments {
+	position: relative;
+	top: -45px;
+}
+
+.comments-container-top {
+	height: 94px;
+	width: 100%;
+	background: url(_images/comment-bg-top.png) repeat-x;
+}
+
+.comments-container-bottom {
+	height: 94px;
+	width: 100%;
+	background: url(_images/comment-bg-bottom.png) repeat-x;
+}
+
+.comments-container-middle {
+	background-color: #d5d5d5;
+	width: 100%;
+}
+
+.comments .comment-list li {
+	position: relative;
+	overflow: hidden;
+	margin-left: 110px;
+	margin-bottom: 26px;
+	width: 712px;
+	padding-bottom: 30px;
+	background: url(_images/icon_star_small.png) bottom center no-repeat;
+}
+
+.comments .comment-list li .avitar {
+	border-radius: 2px;
+	padding: 1px;
+	border: 1px solid #858585;
+	height: 48px;
+	width: 48px;
+}
+
+.comments .comment-list li.left .avitar {
+	float: left;
+	margin-right: 5px;
+	margin-left : 10px;
+}
+
+.comments .comment-list li.right .avitar {
+	float: right;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+.comments .comment-list li .triangle {
+	width: 0;
+	height: 0;
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent; 
+	position: absolute;
+	top: 20px;
+}
+
+.comments .comment-list li.left .triangle {
+	border-right:6px solid #858585;
+	left: 71px;
+}
+
+.comments .comment-list li.right .triangle {
+	border-left:6px solid #858585;
+	right: 81px;
+}
+
+.comments .comment-list li p, .comments .comment-list li textarea {
+	float: left;
+	width: 600px;
+	position:relative;
+	padding: 10px 15px 10px 10px;
+	background: #efefef;
+	top: -10px;
+	margin: 10px;
+	border: none;
+	border-radius: 3px;
+	
+	box-shadow: 0 1px 0 #ccc,
+           0 2px 0 #c9c9c9,
+           0 3px 0 #bbb,
+           0 4px 0 #b9b9b9,
+           0 5px 0 #aaa,
+           0 6px 1px rgba(0,0,0,.1),
+           0 0 5px rgba(0,0,0,.1),
+           0 1px 3px rgba(0,0,0,.3),
+           0 3px 5px rgba(0,0,0,.2),
+           0 5px 10px rgba(0,0,0,.25);
+}
+
+.comments .comment-list li textarea {
+	padding-bottom: 30px;
+}
+
+.comments .comment-list li .btn {
+	position: absolute;
+	bottom: 46px;
+	right: 16px;
+}
