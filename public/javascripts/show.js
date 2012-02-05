@@ -59,6 +59,7 @@ $(document).ready(function() {
 	
 	$('.main-body .show-list .commentbtn').click(function(){
 		$('html, body').animate({scrollTop: $(document).height()}, 'slow');
+		$('#commentTextArea').focus();
 	});
 	
 });
