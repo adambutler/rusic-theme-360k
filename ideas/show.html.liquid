@@ -40,11 +40,19 @@
 			<ul class="comment-list unstyled">
 				{% if idea.comments != empty %}
 					{% for comment in idea.comments %}
-						<li class="left">
-							<div class="triangle"></div>
-							<img src="{{comment.user.image_url}}" width="48px" height="48px" class="avitar"/>
-							<p>{{comment.body}}<br/><b>Posted by <a href="{{comment.user.profile_url}}" target="_blank">{{comment.user.nickname}}</a></b></p>
-						</li>
+						{% if forloop.index0%2 == 0 %}
+							<li class="left">
+								<div class="triangle"></div>
+								<img src="{{comment.user.image_url}}" width="48px" height="48px" class="avitar"/>
+								<p>{{comment.body}}<br/><b>Posted by <a href="{{comment.user.profile_url}}" target="_blank">{{comment.user.nickname}}</a></b></p>
+							</li>
+						{% else %}
+							<li class="right">
+								<div class="triangle"></div>
+								<img src="{{comment.user.image_url}}" width="48px" height="48px" class="avitar"/>
+								<p>{{comment.body}}<br/><b>Posted by <a href="{{comment.user.profile_url}}" target="_blank">{{comment.user.nickname}}</a></b></p>
+							</li>
+						{% endif %}
 					{% endfor %}
 				{% endif %}
 				{% if current_user %}
