@@ -49,7 +49,7 @@
 						<li class="left">
 							<div class="triangle"></div>
 							<img src="{{comment.user.image_url}}" width="48px" height="48px" class="avitar"/>
-							<p>{{comment.body | markdown}}<br/><b>Posted by <a href="{{comment.user.profile_url}}" target="_blank">{{comment.user.nickname}}</a></b></p>
+							<p>{{comment.body}}<br/><b>Posted by <a href="{{comment.user.profile_url}}" target="_blank">{{comment.user.nickname}}</a></b></p>
 						</li>
 					{% endfor %}
 				{% endif %}
