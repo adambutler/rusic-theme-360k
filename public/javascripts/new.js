@@ -1,7 +1,8 @@
 $(document).ready(function() {
 	$('.lightbox .card3dbtn').click(function(){
 		
-		if(!$(this).hasClass('disabled')){
+		if($(this).attr('disabled') != 'disabled'){
+			
 			var cardViewport = $(this).closest('.lightbox').find('.viewport');
 									
 			$(cardViewport).find('.card').each(function(){

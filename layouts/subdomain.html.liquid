@@ -50,6 +50,14 @@
 		<script src="{{assets_url}}/lib/codemirror/mode/css/css.js" type="text/javascript"></script>
 		<script src="{{assets_url}}/lib/codemirror/mode/htmlmixed/htmlmixed.js" type="text/javascript"></script>
 		<link href="{{assets_url}}/lib/codemirror/lib/codemirror.css" rel="stylesheet">
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if (!$.browser.webkit) {
+					$('.main-body').html('<div style="height:1200px;"><div class="modal"><div class="modal-header"><h3>Sorry your browser doesn&#39;t know this ditty!</h3></div><div class="modal-body"><p>360k is a playground for the latest browser innovations, due to the limited time I have to work on this project I&#39;ve decided to only support Webkit browsers.<br/><br/> I recommend <a href="https://www.google.com/chrome">Google Chrome</a>.</p></div></div></div>');
+				}
+			});
+		</script>
 	</head>
 	<body>
 		<header class="main-header">
