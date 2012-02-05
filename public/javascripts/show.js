@@ -56,4 +56,9 @@ $(document).ready(function() {
 	$('.comments .comment-list li textarea').autoResize({
 		extraSpace: 0
 	});
+	
+	$('.main-body .show-list .commentbtn').click(function(){
+		$('html, body').animate({scrollTop: $(document).height()}, 'slow');
+	});
+	
 });
