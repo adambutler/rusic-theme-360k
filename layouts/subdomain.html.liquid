@@ -69,7 +69,7 @@
 						<div class="btn lightboxbtn" id="mainLightboxBtn" lightbox_id="new_post">
 							<i class="pencil"></i> Submit your code
 						</div>
-						{% if space.user.provider == 'twitter' %}
+						{% if current_user.provider == 'twitter' %}
 							<div class="btn twitter social-btn">
 			    				<a href="/auth/signout">
 			    					<span class="font-social-logos">M</span> Signout
