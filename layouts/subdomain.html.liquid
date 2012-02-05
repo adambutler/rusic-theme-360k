@@ -5,7 +5,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>360k</title>
+		<title>
+		{% if idea %}
+			{{idea.title}} - {{space.title}}
+		{% else %}
+			{{space.title}}
+		{% endif %}
+		</title>
 		<meta charset="UTF-8">
 		
 		<!-- ################# -->
@@ -52,10 +58,10 @@
 			<div class="container">
 				<div class="title">
 			    	<a href="{{space.permalink}}" target="_self" class="font-chunk-five">
-			    		<h1>360k</h1>
+			    		<h1>{{space.title}}</h1>
 			    	</a>
 					<blockquote class="example-twitter">
-						<p>Three hundred and sixty thousand pixels & 360kb to do something awesome with...</p>
+						<p>{{space.summary}}</p>
 					</blockquote>
 				</div>
 				<nav class="menu">
@@ -67,13 +73,13 @@
 						</div>
 						{% if space.user.provider == 'twitter' %}
 							<div class="btn twitter social-btn">
-			    				<a href="/signout">
+			    				<a href="/auth/signout">
 			    					<span class="font-social-logos">M</span> Signout
 			    				</a>
 			    			</div>
 						{% else %}
 							<div class="btn facebook social-btn">
-								<a href="/signout">
+								<a href="/auth/signout">
 			    					<span class="font-social-logos">C</span> Signout
 			    				</a>
 			    			</div>
