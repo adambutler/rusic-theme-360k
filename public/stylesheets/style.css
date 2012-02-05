@@ -1,5 +1,9 @@
 /* Reset */
 
+.btn {
+	cursor: pointer;
+}
+
 iframe {
 	border: 0;
 }
@@ -12,6 +16,14 @@ a:hover {
 
 body {
 	background-image: url('_images/background-dark.jpg');
+}
+
+.warning {
+	color: #C09853;
+}
+
+.error {
+	color: #B94A48;
 }
 
 /* Type Regular */

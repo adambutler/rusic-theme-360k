@@ -74,6 +74,33 @@ $(document).ready(function() {
 		preview.open();
 		preview.write(mainEditor.getValue());
 		preview.close();
+		
+		// This code needs optimising
+		
+		var maxkb = 360;
+		var charmax = 368640;
+		var charcurrent;
+		var onekb = 1024;
+		var currentkb;
+		var remainingkb;
+		
+		charcurrent = mainEditor.getValue().length;
+		currentkb = charcurrent/onekb;
+		currentkb = Math.floor(currentkb);
+		remainingkb = maxkb-currentkb;
+		
+		$('#remaining-kb').html(remainingkb+'kb');
+		
+		if(remainingkb<0){
+			$('#remaining-kb').removeClass().addClass('error');
+			$('.lightbox .card3dbtn').attr('disabled', 'disabled');
+		}else if(remainingkb<50){
+			$('#remaining-kb').removeClass().addClass('warning');
+			$('.lightbox .card3dbtn').removeAttr('disabled');
+		}else{
+			$('#remaining-kb').removeClass();
+			$('.lightbox .card3dbtn').removeAttr('disabled');
+		}
 	}
 	
 	$('.lightboxbtn').click(function(){
